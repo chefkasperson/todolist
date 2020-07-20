@@ -10,21 +10,46 @@ app.get('/', function(req, res) {
     let currentDay = today.getDay()
     let day = ''
 
-    if (currentDay === 0) {
-        day = 'Sunday'
-    } else if (currentDay === 1) {
-        day = 'Monday'
-    } else if (currentDay === 2) {
-        day = 'Tuesday'
-    } else if (currentDay === 3) {
-        day = 'Wednesday'
-    } else if (currentDay === 4) {
-        day = 'Thursday' 
-    } else if (currentDay === 5) {
-        day = 'Friday'
-    } else if (currentDay === 6) {
-        day === 'Saturday'
+    switch (currentDay) {
+        case 0:
+            day = 'Sunday'
+            break
+        case 1:
+            day = 'Monday'
+            break
+        case 2:
+            day = 'Tuesday'
+            break
+        case 3:
+            day = 'Wednesday'
+            break
+        case 4:
+            day = 'Thurday'
+            break
+        case 5:
+            day = 'Friday'
+            break
+        case 6:
+            day = 'Saturday'
+            break
+        default:
+            console.log('You have left earth. Your current day is ' + currentDay)
     }
+    // if (currentDay === 0) {
+    //     day = 'Sunday'
+    // } else if (currentDay === 1) {
+    //     day = 'Monday'
+    // } else if (currentDay === 2) {
+    //     day = 'Tuesday'
+    // } else if (currentDay === 3) {
+    //     day = 'Wednesday'
+    // } else if (currentDay === 4) {
+    //     day = 'Thursday' 
+    // } else if (currentDay === 5) {
+    //     day = 'Friday'
+    // } else if (currentDay === 6) {
+    //     day === 'Saturday'
+    // }
     res.render('list', {kindOfDay: day})
 })
 
